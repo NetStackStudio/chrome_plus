@@ -89,6 +89,17 @@ std::wstring GetAppDir() {
   return path;
 }
 
+// 获得配置文件路径
+// 配置文件与程序同目录，扩展名为.ini
+// 如程序文件为 d:\edge\msedge.exe
+// 则配置文件为 d:\edge\msedge.ini
+std::wstring GetIniDir() {
+  wchar_t path[MAX_PATH];
+  ::GetModuleFileName(nullptr, path, MAX_PATH);
+  ::PathRenameExtension(path, L".ini");
+  return path;
+}
+
 std::string wstring_to_string(const std::wstring& wstr) {
   int cbMultiByte = WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), -1, nullptr, 0,
                                         nullptr, nullptr);
