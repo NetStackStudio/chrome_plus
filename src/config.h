@@ -1,7 +1,8 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
-const std::wstring kIniPath = GetAppDir() + L"\\chrome++.ini";
+//const std::wstring kIniPath = GetAppDir() + L"\\chrome++.ini";
+const std::wstring kIniPath = GetIniDir();
 
 // 读取 ini 文件
 bool IsIniExist() {
